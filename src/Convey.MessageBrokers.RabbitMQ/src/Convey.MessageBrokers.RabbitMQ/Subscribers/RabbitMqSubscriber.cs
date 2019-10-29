@@ -28,18 +28,16 @@ namespace Convey.MessageBrokers.RabbitMQ.Subscribers
         private readonly bool _loggerEnabled;
         private readonly RabbitMqOptions _options;
 
-        public RabbitMqSubscriber(IApplicationBuilder app)
+        public RabbitMqSubscriber(IServiceProvider app)
         {
-            _serviceProvider = app.ApplicationServices.GetRequiredService<IServiceProvider>();
-            _connection = app.ApplicationServices.GetRequiredService<IConnection>();
+            _serviceProvider = app.GetRequiredService<IServiceProvider>();
+            _connection = app.GetRequiredService<IConnection>();
             _channel = _connection.CreateModel();
-            _publisher = app.ApplicationServices.GetRequiredService<IBusPublisher>();
-            _rabbitMqSerializer = app.ApplicationServices.GetRequiredService<IRabbitMqSerializer>();
-            ;
-            _conventionsProvider = app.ApplicationServices.GetRequiredService<IConventionsProvider>();
-            ;
-            _contextProvider = app.ApplicationServices.GetRequiredService<IContextProvider>();
-            _logger = app.ApplicationServices.GetService<ILogger<RabbitMqSubscriber>>();
+            _publisher = app.GetRequiredService<IBusPublisher>();
+            _rabbitMqSerializer = app.GetRequiredService<IRabbitMqSerializer>();
+            _conventionsProvider = app.GetRequiredService<IConventionsProvider>();
+            _contextProvider = app.GetRequiredService<IContextProvider>();
+            _logger = app.GetService<ILogger<RabbitMqSubscriber>>();
             _exceptionToMessageMapper = _serviceProvider.GetService<IExceptionToMessageMapper>() ??
                                         new EmptyExceptionToMessageMapper();
             _pluginsExecutor = _serviceProvider.GetService<IRabbitMqPluginsExecutor>();

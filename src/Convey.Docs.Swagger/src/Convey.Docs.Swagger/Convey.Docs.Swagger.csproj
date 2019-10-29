@@ -14,7 +14,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Convey\src\Convey\Convey.csproj" />
   </ItemGroup>
-  
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="4.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />

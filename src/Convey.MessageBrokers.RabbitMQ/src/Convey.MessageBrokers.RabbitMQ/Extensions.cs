@@ -126,7 +126,7 @@ namespace Convey.MessageBrokers.RabbitMQ
             return builder;
         }
         
-        public static IBusSubscriber UseRabbitMq(this IApplicationBuilder app) => new RabbitMqSubscriber(app);
+        public static IBusSubscriber UseRabbitMq(this IApplicationBuilder app) => new RabbitMqSubscriber(app.ApplicationServices);
 
         private class EmptyMessageProcessor : IMessageProcessor
         {

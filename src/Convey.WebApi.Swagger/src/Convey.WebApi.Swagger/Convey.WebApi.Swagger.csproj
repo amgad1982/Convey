@@ -15,5 +15,7 @@
     <ProjectReference Include="..\..\..\Convey.WebApi\src\Convey.WebApi\Convey.WebApi.csproj" />
     <ProjectReference Include="..\..\..\Convey.Docs.Swagger\src\Convey.Docs.Swagger\Convey.Docs.Swagger.csproj" />
   </ItemGroup>
-  
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
 </Project>

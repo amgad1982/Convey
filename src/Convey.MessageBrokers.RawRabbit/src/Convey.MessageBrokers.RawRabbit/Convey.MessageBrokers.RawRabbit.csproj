@@ -10,11 +10,15 @@
     <PackageId>Convey.MessageBrokers.RawRabbit</PackageId>
     <PackageTags>Convey.MessageBrokers.RawRabbit</PackageTags>
   </PropertyGroup>
-
+ 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Convey\src\Convey\Convey.csproj" />
     <ProjectReference Include="..\..\..\Convey.MessageBrokers\src\Convey.MessageBrokers\Convey.MessageBrokers.csproj" />
     <ProjectReference Include="..\..\..\Convey.Persistence.Redis\src\Convey.Persistence.Redis\Convey.Persistence.Redis.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   
   <ItemGroup>

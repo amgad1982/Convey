@@ -10,7 +10,9 @@
     <PackageId>Convey.WebApi.CQRS</PackageId>
     <PackageTags>Convey.WebApi.CQRS</PackageTags>
   </PropertyGroup>
-
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Convey.CQRS.Commands\src\Convey.CQRS.Commands\Convey.CQRS.Commands.csproj" />
     <ProjectReference Include="..\..\..\Convey.CQRS.Events\src\Convey.CQRS.Events\Convey.CQRS.Events.csproj" />
